@@ -1,0 +1,6 @@
+--markup markdown
+--plugin markdown
+--output-dir doc
+lib/**/*.rb
+-
+README.md

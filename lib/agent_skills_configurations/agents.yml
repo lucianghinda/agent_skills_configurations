@@ -1,0 +1,415 @@
+base_paths:
+  xdg_config:
+    env_var: XDG_CONFIG_HOME
+    fallback: ".config"
+  home:
+    env_var: ""
+    fallback: ""
+  claude_home:
+    env_var: CLAUDE_CONFIG_DIR
+    fallback: ".claude"
+  codex_home:
+    env_var: CODEX_HOME
+    fallback: ".codex"
+
+agents:
+  - name: amp
+    display_name: Amp
+    skills_dir: ".agents/skills"
+    base_path: xdg_config
+    global_skills_path: "agents/skills"
+    detect_paths:
+      - "amp"
+
+  - name: antigravity
+    display_name: Antigravity
+    skills_dir: ".agent/skills"
+    base_path: home
+    global_skills_path: ".gemini/antigravity/global_skills"
+    detect_paths:
+      - { cwd: ".agent" }
+      - { base: home, path: ".gemini/antigravity" }
+
+  - name: claude-code
+    display_name: Claude Code
+    skills_dir: ".claude/skills"
+    base_path: claude_home
+    global_skills_path: "skills"
+    detect_paths:
+      - ""
+
+  - name: bolt-new
+    display_name: Bolt.new
+    skills_dir: ".bolt-new/skills"
+    base_path: home
+    global_skills_path: ".bolt-new/skills"
+    detect_paths:
+      - ".bolt-new"
+
+  - name: codex
+    display_name: Codex
+    skills_dir: ".codex/skills"
+    base_path: codex_home
+    global_skills_path: "skills"
+    detect_paths:
+      - ""
+      - { absolute: "/etc/codex" }
+
+  - name: continue
+    display_name: Continue
+    skills_dir: ".continue/skills"
+    base_path: home
+    global_skills_path: ".continue/skills"
+    detect_paths:
+      - ".continue"
+
+  - name: crush
+    display_name: Crush
+    skills_dir: ".crush/skills"
+    base_path: home
+    global_skills_path: ".config/crush/skills"
+    detect_paths:
+      - ".config/crush"
+
+  - name: droid
+    display_name: Droid
+    skills_dir: ".factory/skills"
+    base_path: home
+    global_skills_path: ".factory/skills"
+    detect_paths:
+      - ".factory"
+
+  - name: github-copilot
+    display_name: GitHub Copilot
+    skills_dir: ".github/skills"
+    base_path: home
+    global_skills_path: ".copilot/skills"
+    detect_paths:
+      - { cwd: ".github" }
+      - { base: home, path: ".copilot" }
+
+  - name: goose
+    display_name: Goose
+    skills_dir: ".goose/skills"
+    base_path: xdg_config
+    global_skills_path: "goose/skills"
+    detect_paths:
+      - "goose"
+
+  - name: gpt-cli
+    display_name: GPT-CLI
+    skills_dir: ".gpt-cli/skills"
+    base_path: home
+    global_skills_path: ".gpt-cli/skills"
+    detect_paths:
+      - ".gpt-cli"
+
+  - name: kaito
+    display_name: Kaito
+    skills_dir: ".kaito/skills"
+    base_path: home
+    global_skills_path: ".kaito/skills"
+    detect_paths:
+      - ".kaito"
+
+  - name: kilo
+    display_name: Kilo
+    skills_dir: ".kilocode/skills"
+    base_path: home
+    global_skills_path: ".kilocode/skills"
+    detect_paths:
+      - ".kilocode"
+
+  - name: kimi-cli
+    display_name: Kimi CLI
+    skills_dir: ".agents/skills"
+    base_path: home
+    global_skills_path: ".config/agents/skills"
+    detect_paths:
+      - ".config/agents"
+
+  - name: moltbot
+    display_name: Moltbot
+    skills_dir: "skills"
+    base_path: home
+    global_skills_path: ".moltbot/skills"
+    global_skills_path_fallbacks:
+      - ".clawdbot/skills"
+      - ".moltbot/skills"
+    detect_paths:
+      - ".moltbot"
+
+  - name: opencode
+    display_name: OpenCode
+    skills_dir: ".opencode/skills"
+    base_path: xdg_config
+    global_skills_path: "opencode/skills"
+    detect_paths:
+      - { base: xdg_config, path: "opencode" }
+      - { base: claude_home, path: "skills" }
+
+  - name: pi
+    display_name: Pi
+    skills_dir: ".pi/skills"
+    base_path: home
+    global_skills_path: ".pi/agent/skills"
+    detect_paths:
+      - ".pi"
+
+  - name: roo-code
+    display_name: Roo Code
+    skills_dir: ".roo-code/skills"
+    base_path: home
+    global_skills_path: ".roo-code/skills"
+    detect_paths:
+      - ".roo-code"
+
+  - name: sagemaker
+    display_name: SageMaker
+    skills_dir: ".sagemaker/skills"
+    base_path: home
+    global_skills_path: ".sagemaker/skills"
+    detect_paths:
+      - ".sagemaker"
+
+  - name: tabby
+    display_name: Tabby
+    skills_dir: ".tabby/skills"
+    base_path: home
+    global_skills_path: ".tabby/skills"
+    detect_paths:
+      - ".tabby"
+
+  - name: trae-cn
+    display_name: Trae CN
+    skills_dir: ".trae/skills"
+    base_path: home
+    global_skills_path: ".trae-cn/skills"
+    detect_paths:
+      - ".trae"
+
+  - name: trae
+    display_name: Trae
+    skills_dir: ".trae/skills"
+    base_path: home
+    global_skills_path: ".trae/skills"
+    detect_paths:
+      - ".trae"
+
+  - name: v0-cli
+    display_name: v0 CLI
+    skills_dir: ".v0-cli/skills"
+    base_path: home
+    global_skills_path: ".v0-cli/skills"
+    detect_paths:
+      - ".v0-cli"
+
+  - name: windsurf
+    display_name: Windsurf
+    skills_dir: ".windsurf/skills"
+    base_path: home
+    global_skills_path: ".codeium/windsurf/skills"
+    detect_paths:
+      - ".windsurf"
+
+  - name: cursor
+    display_name: Cursor
+    skills_dir: ".cursor/skills"
+    base_path: home
+    global_skills_path: ".cursor/skills"
+    detect_paths:
+      - ".cursor"
+
+  - name: aider
+    display_name: Aider
+    skills_dir: ".aider/skills"
+    base_path: home
+    global_skills_path: ".aider/skills"
+    detect_paths:
+      - ".aider"
+
+  - name: avante
+    display_name: Avante
+    skills_dir: ".avante/skills"
+    base_path: home
+    global_skills_path: ".avante/skills"
+    detect_paths:
+      - ".avante"
+
+  - name: cline
+    display_name: Cline
+    skills_dir: ".cline/skills"
+    base_path: home
+    global_skills_path: ".cline/skills"
+    detect_paths:
+      - ".cline"
+
+  - name: codebuddy
+    display_name: CodeBuddy
+    skills_dir: ".codebuddy/skills"
+    base_path: home
+    global_skills_path: ".codebuddy/skills"
+    detect_paths:
+      - { cwd: ".codebuddy" }
+      - { base: home, path: ".codebuddy" }
+
+  - name: codeium
+    display_name: Codeium
+    skills_dir: ".codeium/skills"
+    base_path: home
+    global_skills_path: ".codeium/skills"
+    detect_paths:
+      - ".codeium"
+
+  - name: command-code
+    display_name: Command Code
+    skills_dir: ".commandcode/skills"
+    base_path: home
+    global_skills_path: ".commandcode/skills"
+    detect_paths:
+      - ".commandcode"
+
+  - name: copilot
+    display_name: Copilot
+    skills_dir: ".copilot/skills"
+    base_path: home
+    global_skills_path: ".copilot/skills"
+    detect_paths:
+      - ".copilot"
+
+  - name: deepseek
+    display_name: DeepSeek
+    skills_dir: ".deepseek/skills"
+    base_path: home
+    global_skills_path: ".deepseek/skills"
+    detect_paths:
+      - ".deepseek"
+
+  - name: fabric
+    display_name: Fabric
+    skills_dir: ".fabric/skills"
+    base_path: home
+    global_skills_path: ".fabric/skills"
+    detect_paths:
+      - ".fabric"
+
+  - name: gemini-cli
+    display_name: Gemini CLI
+    skills_dir: ".gemini/skills"
+    base_path: home
+    global_skills_path: ".gemini/skills"
+    detect_paths:
+      - ".gemini"
+
+  - name: junie
+    display_name: Junie
+    skills_dir: ".junie/skills"
+    base_path: home
+    global_skills_path: ".junie/skills"
+    detect_paths:
+      - ".junie"
+
+  - name: kiro-cli
+    display_name: Kiro CLI
+    skills_dir: ".kiro/skills"
+    base_path: home
+    global_skills_path: ".kiro/skills"
+    detect_paths:
+      - ".kiro"
+
+  - name: kode
+    display_name: Kode
+    skills_dir: ".kode/skills"
+    base_path: home
+    global_skills_path: ".kode/skills"
+    detect_paths:
+      - ".kode"
+
+  - name: mcpjam
+    display_name: MCPJam
+    skills_dir: ".mcpjam/skills"
+    base_path: home
+    global_skills_path: ".mcpjam/skills"
+    detect_paths:
+      - ".mcpjam"
+
+  - name: mux
+    display_name: Mux
+    skills_dir: ".mux/skills"
+    base_path: home
+    global_skills_path: ".mux/skills"
+    detect_paths:
+      - ".mux"
+
+  - name: neovate
+    display_name: Neovate
+    skills_dir: ".neovate/skills"
+    base_path: home
+    global_skills_path: ".neovate/skills"
+    detect_paths:
+      - ".neovate"
+
+  - name: openclaude
+    display_name: OpenClaude IDE
+    skills_dir: ".openclaude/skills"
+    base_path: home
+    global_skills_path: ".openclaude/skills"
+    detect_paths:
+      - ".openclaude"
+      - { cwd: ".openclaude" }
+
+  - name: openhands
+    display_name: OpenHands
+    skills_dir: ".openhands/skills"
+    base_path: home
+    global_skills_path: ".openhands/skills"
+    detect_paths:
+      - ".openhands"
+
+  - name: pochi
+    display_name: Pochi
+    skills_dir: ".pochi/skills"
+    base_path: home
+    global_skills_path: ".pochi/skills"
+    detect_paths:
+      - ".pochi"
+
+  - name: perplexity
+    display_name: Perplexity
+    skills_dir: ".perplexity/skills"
+    base_path: home
+    global_skills_path: ".perplexity/skills"
+    detect_paths:
+      - ".perplexity"
+
+  - name: phind
+    display_name: Phind
+    skills_dir: ".phind/skills"
+    base_path: home
+    global_skills_path: ".phind/skills"
+    detect_paths:
+      - ".phind"
+
+  - name: qoder
+    display_name: Qoder
+    skills_dir: ".qoder/skills"
+    base_path: home
+    global_skills_path: ".qoder/skills"
+    detect_paths:
+      - ".qoder"
+
+  - name: qwen-code
+    display_name: Qwen Code
+    skills_dir: ".qwen/skills"
+    base_path: home
+    global_skills_path: ".qwen/skills"
+    detect_paths:
+      - ".qwen"
+
+  - name: zencoder
+    display_name: Zencoder
+    skills_dir: ".zencoder/skills"
+    base_path: home
+    global_skills_path: ".zencoder/skills"
+    detect_paths:
+      - ".zencoder"
